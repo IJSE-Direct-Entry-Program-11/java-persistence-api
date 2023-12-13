@@ -1,9 +1,6 @@
 package lk.ijse.dep11.app.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -26,6 +23,11 @@ public class Employee implements Serializable {
     @ToString.Exclude
     @OneToOne(mappedBy = "employee")
     private Spouse spouse;
+
+    @ToString.Exclude
+    @Setter(AccessLevel.NONE)
+    @OneToOne(mappedBy = "employee")
+    private Vehicle vehicle;
 
     public Employee(int id, String name, String contact, String address) {
         this.id = id;
