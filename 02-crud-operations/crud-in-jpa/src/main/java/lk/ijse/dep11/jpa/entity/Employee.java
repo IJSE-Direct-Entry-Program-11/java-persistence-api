@@ -18,4 +18,9 @@ public class Employee implements Serializable {
     private int id;
     private String name;
     private String contact;
+
+    public Employee(String name, String contact) {
+        this.name = name;
+        this.contact = contact;
+    }
 }

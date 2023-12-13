@@ -16,14 +16,14 @@ public class ContextDemo9 {
         try {
 
             Customer customer = new Customer(3, "Suranga", "Panadura");
-            em.persist(customer);
-            em.detach(customer);
-            em.clear();
+            em.persist(customer);           // INSERT INTO
+            em.remove(customer);            // DELETE
+            Employee employee = new Employee("Ruwan", "Galle");
+            em.persist(employee);
+            System.out.println("-------");
+//            em.persist(customer);           // INSERT INTO
 
-            Employee employee = em.find(Employee.class, 1);
-            employee.setContact("078-1345678");
-
-            System.out.println("-----");
+            System.out.println("------");
             em.getTransaction().commit();
         } catch (Throwable t) {
             em.getTransaction().rollback();

@@ -15,15 +15,9 @@ public class ContextDemo10 {
         em.getTransaction().begin();
         try {
 
-            Customer customer = new Customer(3, "Suranga", "Panadura");
-            em.persist(customer);           // INSERT INTO
-            em.remove(customer);            // DELETE
-            Employee employee = new Employee("Ruwan", "Galle");
-            em.persist(employee);
-            System.out.println("-------");
-//            em.persist(customer);           // INSERT INTO
+            Employee employee = new Employee(6, "dfkasjlj", "fdas");
+            em.remove(employee);
 
-            System.out.println("------");
             em.getTransaction().commit();
         } catch (Throwable t) {
             em.getTransaction().rollback();

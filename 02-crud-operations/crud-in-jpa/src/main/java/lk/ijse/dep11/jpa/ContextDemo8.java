@@ -15,20 +15,15 @@ public class ContextDemo8 {
         em.getTransaction().begin();
         try {
 
-            Customer customer = new Customer(10, "Gunaya", "Hoamagama");
+            Customer customer = new Customer(3, "Suranga", "Panadura");
             em.persist(customer);
-            System.out.println("Is customer inside the context? " + em.contains(customer));
             em.detach(customer);
-            System.out.println("Is customer inside the context? " + em.contains(customer));
+            em.clear();
 
-            System.out.println("----------------------");
+            Employee employee = em.find(Employee.class, 1);
+            employee.setContact("078-1345678");
 
-            Employee employee = new Employee("Gunaya", "011-1234567");
-            em.persist(employee);
-            System.out.println("Is employee inside the context? " + em.contains(employee));
-            em.persist(employee);
-            System.out.println("Is employee inside the context? " + em.contains(employee));
-
+            System.out.println("-----");
             em.getTransaction().commit();
         } catch (Throwable t) {
             em.getTransaction().rollback();
