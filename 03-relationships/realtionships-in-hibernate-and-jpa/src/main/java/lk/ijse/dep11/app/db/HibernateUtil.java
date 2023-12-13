@@ -23,6 +23,9 @@ public class HibernateUtil {
                 .addAnnotatedClass(Vehicle.class)
                 .addAnnotatedClass(Customer.class)
                 .addAnnotatedClass(Order.class)
+                .addAnnotatedClass(Contact.class)
+                .addAnnotatedClass(Actor.class)
+                .addAnnotatedClass(Movie.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();

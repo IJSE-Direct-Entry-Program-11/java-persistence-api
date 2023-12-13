@@ -30,7 +30,7 @@ public class OneToManyDemo2 {
             //System.out.println(od001.getCustomer());
             //od001.setCustomer(c002);
 
-            //c002.getOrderSet().remove(od001);
+//            c002.getOrderSet().remove(od001);
             //c001.getOrderSet().add(od001);
             c001.addOrder(od001);
 //            c001.removeOrder(od001);

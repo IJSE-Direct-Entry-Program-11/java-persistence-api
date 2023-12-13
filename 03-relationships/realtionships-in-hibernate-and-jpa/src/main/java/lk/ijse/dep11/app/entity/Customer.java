@@ -27,6 +27,12 @@ public class Customer implements Serializable {
     @OneToMany(mappedBy = "customer")
     private Set<Order> orderSet;
 
+    @Setter(AccessLevel.NONE)
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    @OneToMany(mappedBy = "customer")
+    private Set<Contact> contactSet;
+
     public Customer(String id, String name, String address) {
         this.id = id;
         this.name = name;
@@ -39,6 +45,15 @@ public class Customer implements Serializable {
     }
 
     public void removeOrder(Order order){
+        throw new RuntimeException("Unsupported Operation");
+    }
+
+    public void addContact(Contact contact){
+        contactSet.add(contact);
+        contact.setCustomer(this);
+    }
+
+    public void removeContact(Contact contact){
         throw new RuntimeException("Unsupported Operation");
     }
 
