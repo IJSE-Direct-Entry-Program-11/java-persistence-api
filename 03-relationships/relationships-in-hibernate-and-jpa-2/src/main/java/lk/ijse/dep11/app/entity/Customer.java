@@ -4,26 +4,29 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name= "employee2")
-public class Employee2 implements Serializable {
+@Table(name = "customer")
+public class Customer implements Serializable {
     @Id
+    @Column(length = 10)
     private String id;
     @Column(nullable = false, length = 100)
     private String name;
     @Column(nullable = false, length = 20)
     private String contact;
 
+    @EqualsAndHashCode.Exclude
     @ToString.Exclude
     @Setter(AccessLevel.NONE)
-    @OneToOne(mappedBy = "employee")
-    private Vehicle vehicle;
+    @OneToMany(mappedBy = "customer")
+    private Set<Order> orderSet;
 
-    public Employee2(String id, String name, String contact) {
+    public Customer(String id, String name, String contact) {
         this.id = id;
         this.name = name;
         this.contact = contact;

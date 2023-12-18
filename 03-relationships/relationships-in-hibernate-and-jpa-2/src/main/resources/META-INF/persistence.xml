@@ -11,6 +11,8 @@
     <class>lk.ijse.dep11.app.entity.Employee</class>
     <class>lk.ijse.dep11.app.entity.Employee2</class>
     <class>lk.ijse.dep11.app.entity.Vehicle</class>
+    <class>lk.ijse.dep11.app.entity.Customer</class>
+    <class>lk.ijse.dep11.app.entity.Order</class>
 
     <properties>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>

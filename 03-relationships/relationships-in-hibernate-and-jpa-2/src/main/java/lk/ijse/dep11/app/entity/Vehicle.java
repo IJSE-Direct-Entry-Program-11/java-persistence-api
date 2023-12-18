@@ -22,6 +22,12 @@ public class Vehicle implements Serializable {
     @OneToOne
     @JoinTable(name = "employee_vehicle",
             joinColumns = @JoinColumn(name = "vehicle_number", referencedColumnName = "reg_number"),
-            inverseJoinColumns = @JoinColumn(name = "emp_id", referencedColumnName = "id"))
+            inverseJoinColumns = @JoinColumn(name = "emp_id", referencedColumnName = "id",
+            nullable = false, unique = true))
     private Employee2 employee;
+
+    public Vehicle(String registrationNumber, String model) {
+        this.registrationNumber = registrationNumber;
+        this.model = model;
+    }
 }
