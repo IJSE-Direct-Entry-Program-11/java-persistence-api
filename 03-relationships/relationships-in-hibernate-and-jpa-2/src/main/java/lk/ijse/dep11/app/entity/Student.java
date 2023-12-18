@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -16,10 +13,15 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Student implements Serializable {
-    @Id
-    private int id;
-    @Column(length = 150, nullable = false)
-    private String firstName;
+    @EmbeddedId
+    @AttributeOverride(name = "firstName", column = @Column(name = "first_name", length = 50))
+    @AttributeOverride(name = "lastName", column = @Column(name = "last_name", length = 50))
+    private StudentPK studentPK;
     @Column(length = 20, nullable = false)
     private String contact;
+
+    public Student(String firstName, String lastName, String contact) {
+        this.studentPK = new StudentPK(firstName, lastName);
+        this.contact = contact;
+    }
 }
