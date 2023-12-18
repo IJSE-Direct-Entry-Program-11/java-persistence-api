@@ -8,6 +8,9 @@
 
     <class>lk.ijse.dep11.app.entity.Student</class>
     <class>lk.ijse.dep11.app.entity.Teacher</class>
+    <class>lk.ijse.dep11.app.entity.Employee</class>
+    <class>lk.ijse.dep11.app.entity.Employee2</class>
+    <class>lk.ijse.dep11.app.entity.Vehicle</class>
 
     <properties>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
