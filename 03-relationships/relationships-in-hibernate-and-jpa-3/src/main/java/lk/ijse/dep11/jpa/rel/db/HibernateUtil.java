@@ -29,6 +29,13 @@ public class HibernateUtil {
                 .addAnnotatedClass(Enrollment.class)
                 .addAnnotatedClass(Counsellor.class)
                 .addAnnotatedClass(Counselling.class)
+                .addAnnotatedClass(Cart.class)
+                .addAnnotatedClass(Item.class)
+                .addAnnotatedClass(CartItem.class)
+                .addAnnotatedClass(Customer.class)
+                .addAnnotatedClass(Order.class)
+                .addAnnotatedClass(OrderGood.class)
+                .addAnnotatedClass(OrderDetail.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();

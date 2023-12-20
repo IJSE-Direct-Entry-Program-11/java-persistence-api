@@ -17,6 +17,13 @@
     <class>lk.ijse.dep11.jpa.rel.entity.Enrollment</class>
     <class>lk.ijse.dep11.jpa.rel.entity.Counsellor</class>
     <class>lk.ijse.dep11.jpa.rel.entity.Counselling</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.Cart</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.Item</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.CartItem</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.Customer</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.Order</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.OrderDetail</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.OrderGood</class>
 
     <properties>
       <property name="javax.persistence.jdbc.url"
