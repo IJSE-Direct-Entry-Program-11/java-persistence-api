@@ -12,6 +12,9 @@
     <class>lk.ijse.dep11.jpa.rel.entity.Athlete</class>
     <class>lk.ijse.dep11.jpa.rel.entity.PersonalTrainer</class>
     <class>lk.ijse.dep11.jpa.rel.entity.AthleteTrainer</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.Course</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.Student</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.Enrollment</class>
 
     <properties>
       <property name="javax.persistence.jdbc.url"

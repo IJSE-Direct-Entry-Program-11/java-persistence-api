@@ -24,6 +24,9 @@ public class HibernateUtil {
                 .addAnnotatedClass(Athlete.class)
                 .addAnnotatedClass(PersonalTrainer.class)
                 .addAnnotatedClass(AthleteTrainer.class)
+                .addAnnotatedClass(Course.class)
+                .addAnnotatedClass(Student.class)
+                .addAnnotatedClass(Enrollment.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();
