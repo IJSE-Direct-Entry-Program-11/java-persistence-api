@@ -1,5 +1,8 @@
 package lk.ijse.dep11.jpa.rel.db;
 
+import lk.ijse.dep11.jpa.rel.entity.Employee;
+import lk.ijse.dep11.jpa.rel.entity.EmployeeVehicle;
+import lk.ijse.dep11.jpa.rel.entity.Vehicle;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -17,6 +20,9 @@ public class HibernateUtil {
                 .build();
 
         Metadata metadata = new MetadataSources(standardRegistry)
+                .addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Vehicle.class)
+                .addAnnotatedClass(EmployeeVehicle.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();

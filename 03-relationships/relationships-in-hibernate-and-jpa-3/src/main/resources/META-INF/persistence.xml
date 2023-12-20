@@ -6,6 +6,10 @@
   <persistence-unit name="default">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
+    <class>lk.ijse.dep11.jpa.rel.entity.Employee</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.Vehicle</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.EmployeeVehicle</class>
+
     <properties>
       <property name="javax.persistence.jdbc.url"
                 value="jdbc:mysql://localhost:3306/dep11_rel3?createDatabaseIfNotExist=true"/>
