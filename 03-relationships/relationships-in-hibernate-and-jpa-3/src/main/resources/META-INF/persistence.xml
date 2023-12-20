@@ -9,6 +9,9 @@
     <class>lk.ijse.dep11.jpa.rel.entity.Employee</class>
     <class>lk.ijse.dep11.jpa.rel.entity.Vehicle</class>
     <class>lk.ijse.dep11.jpa.rel.entity.EmployeeVehicle</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.Athlete</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.PersonalTrainer</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.AthleteTrainer</class>
 
     <properties>
       <property name="javax.persistence.jdbc.url"
