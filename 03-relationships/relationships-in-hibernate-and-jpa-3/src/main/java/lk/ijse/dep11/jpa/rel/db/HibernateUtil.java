@@ -1,6 +1,7 @@
 package lk.ijse.dep11.jpa.rel.db;
 
 import lk.ijse.dep11.jpa.rel.entity.*;
+import lk.ijse.dep11.jpa.rel.entity.Module;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -36,6 +37,11 @@ public class HibernateUtil {
                 .addAnnotatedClass(Order.class)
                 .addAnnotatedClass(OrderGood.class)
                 .addAnnotatedClass(OrderDetail.class)
+                .addAnnotatedClass(Employee2.class)
+                .addAnnotatedClass(Module.class)
+                .addAnnotatedClass(Supplier.class)
+                .addAnnotatedClass(Buyer.class)
+                .addAnnotatedClass(LuxuryItem.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();

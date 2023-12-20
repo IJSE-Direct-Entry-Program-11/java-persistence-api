@@ -24,6 +24,11 @@
     <class>lk.ijse.dep11.jpa.rel.entity.Order</class>
     <class>lk.ijse.dep11.jpa.rel.entity.OrderDetail</class>
     <class>lk.ijse.dep11.jpa.rel.entity.OrderGood</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.Employee2</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.Module</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.Supplier</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.Buyer</class>
+    <class>lk.ijse.dep11.jpa.rel.entity.LuxuryItem</class>
 
     <properties>
       <property name="javax.persistence.jdbc.url"
