@@ -1,13 +1,14 @@
 package lk.ijse.dep11.jpa.rel.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 
 @Data
@@ -23,27 +24,27 @@ public class LuxuryItem implements Serializable {
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal price;
 
-    @Setter(AccessLevel.NONE)
-    @Getter(AccessLevel.NONE)
     @ManyToMany
     @JoinTable(name = "purchase",
             joinColumns = @JoinColumn(name = "code", referencedColumnName = "code"),
             inverseJoinColumns = {
-                @JoinColumn(name = "buyer_id", referencedColumnName = "id"),
-                @JoinColumn(name = "supplier_id", referencedColumnName = "id"),
+                    @JoinColumn(name = "buyer_id", referencedColumnName = "id"),
+                    @JoinColumn(name = "supplier_id", referencedColumnName = "id"),
             })
-    private Map purchaseBuyerSet;
+    private Set<Buyer> buyerSet = new HashSet<>();
 
-//    @ManyToMany
-//    @JoinTable(name = "purchase",
-//            joinColumns = @JoinColumn(name = "code", referencedColumnName = "code"),
-//            inverseJoinColumns =  @JoinColumn(name = "buyer_id", referencedColumnName = "id"))
-//    private List<Buyer> buyerSet;
-//
-//    @ManyToMany
-//    @JoinTable(name = "purchase",
-//            joinColumns = @JoinColumn(name = "code", referencedColumnName = "code"),
-//            inverseJoinColumns = @JoinColumn(name = "supplier_id", referencedColumnName = "id"))
-//    private List<Supplier> supplierSet;
+    @ManyToMany
+    @JoinTable(name = "purchase",
+            joinColumns = @JoinColumn(name = "code", referencedColumnName = "code"),
+            inverseJoinColumns = {
+                    @JoinColumn(name = "supplier_id", referencedColumnName = "id"),
+                    @JoinColumn(name = "buyer_id", referencedColumnName = "id"),
+            })
+    private Set<Supplier> supplierSet = new HashSet<>();
 
+    public LuxuryItem(String code, String description, BigDecimal price) {
+        this.code = code;
+        this.description = description;
+        this.price = price;
+    }
 }

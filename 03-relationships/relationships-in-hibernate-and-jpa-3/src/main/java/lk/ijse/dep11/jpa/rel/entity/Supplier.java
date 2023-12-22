@@ -5,13 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "supplier")
+@SecondaryTable(name = "purchase",
+        pkJoinColumns = @PrimaryKeyJoinColumn(name = "supplier_id", referencedColumnName = "id"))
 public class Supplier {
     @Id
     private int id;

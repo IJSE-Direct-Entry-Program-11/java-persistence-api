@@ -12,6 +12,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Entity
 @Table(name = "buyer")
+@SecondaryTable(name = "purchase",
+        pkJoinColumns = @PrimaryKeyJoinColumn(name = "buyer_id", referencedColumnName = "id"))
 public class Buyer implements Serializable {
     @Id
     private int id;
